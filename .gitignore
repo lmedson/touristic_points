@@ -90,3 +90,6 @@ db.sqlite3
 
 #sh helpers
 *.sh
+
+#Pipfile helper
+*.lock
