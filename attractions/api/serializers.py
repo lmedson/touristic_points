@@ -5,4 +5,4 @@ from core.models import Attraction
 class AttractionSerializer(ModelSerializer):
     class Meta:
         model = Attraction
-        fields = ('id', 'name', 'description', 'operating_hours', 'min_age')
+        fields = ['id', 'name', 'description', 'operating_hours', 'min_age']
