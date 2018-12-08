@@ -5,7 +5,6 @@ from avaliations.models import Avaliation
 from adresses.models import Adress
 
 
-
 class TouristAttraction(models.Model):
     name = models.CharField(max_length=150)
     description = models.TextField()
@@ -13,8 +12,8 @@ class TouristAttraction(models.Model):
     attractions = models.ManyToManyField(Attraction)
     comments = models.ManyToManyField(Comment)
     avaliations = models.ManyToManyField(Avaliation)
-    adresses = models.ForeignKey(Adress, on_delete=models.CASCADE)
+    adresses = models.ForeignKey(
+        Adress, on_delete=models.CASCADE, null=True, blank=True)
 
     def __str__(self):
         return self.name
-    
