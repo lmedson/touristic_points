@@ -93,3 +93,7 @@ db.sqlite3
 
 #Pipfile helper
 *.lock
+
+#others
+./images/attractions/.
+./images/touristic_attractions/.
