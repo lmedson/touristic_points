@@ -1,5 +1,5 @@
 from rest_framework.serializers import ModelSerializer
-from core.models import Attraction
+from attractions.models import Attraction
 
 
 class AttractionSerializer(ModelSerializer):

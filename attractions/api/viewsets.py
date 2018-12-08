@@ -1,5 +1,5 @@
 from rest_framework.viewsets import ModelViewSet
-from core.models import Attraction
+from attractions.models import Attraction
 from .serializers import AttractionSerializer
 
 

@@ -1,5 +1,5 @@
 from rest_framework.serializers import ModelSerializer
-from core.models import Adress
+from adresses.models import Adress
 
 
 class AdressSerializer(ModelSerializer):
