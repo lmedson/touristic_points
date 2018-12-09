@@ -11,6 +11,7 @@ djangorestframework = "*"
 python-dotenv = "*"
 "autopep8" = "*"
 pylint = "*"
+pillow = "*"
 
 [dev-packages]
 

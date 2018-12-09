@@ -6,7 +6,8 @@ class Attraction(models.Model):
     description = models.TextField()
     operating_hours = models.TextField()
     min_age = models.IntegerField()
+    image = models.ImageField(
+        upload_to='attractions', null=True, blank=True)
 
     def __str__(self):
         return self.name
-    

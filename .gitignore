@@ -93,3 +93,8 @@ db.sqlite3
 
 #Pipfile helper
 *.lock
+
+#others
+./images/.
+./images/.
+.vscode/
