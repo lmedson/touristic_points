@@ -6,13 +6,25 @@ from .serializers import TouristAttractionSerializer
 
 
 class TouristAttractionViewSet(ModelViewSet):
-    """
-    A simple ViewSet for viewing and editing accounts.
-    """
     serializer_class = TouristAttractionSerializer
 
     def get_queryset(self):
-        return TouristAttraction.objects.filter(approved=True)
+        id = self.request.query_params.get('id', None)
+        name = self.request.query_params.get('name', None)
+        description = self.request.query_params.get('description', None)
+        queryset = TouristAttraction.objects.all()
+
+        if id:
+            queryset = TouristAttraction.objects.filter(pk=id)
+
+        if name:
+            queryset = queryset.filter(name__iexact=name)
+
+        if description:
+            queryset = queryset.filter(description__iexact=description)
+
+        print(queryset, 'okokok')
+        return queryset
 
     def list(self, request, *args, **kwargs):
         return super(TouristAttractionViewSet, self).list(request, *args, **kwargs)
