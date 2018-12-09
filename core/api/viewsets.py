@@ -23,7 +23,6 @@ class TouristAttractionViewSet(ModelViewSet):
         if description:
             queryset = queryset.filter(description__iexact=description)
 
-        print(queryset, 'okokok')
         return queryset
 
     def list(self, request, *args, **kwargs):
