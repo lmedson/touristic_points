@@ -95,5 +95,6 @@ db.sqlite3
 *.lock
 
 #others
-./images/attractions/.
-./images/touristic_attractions/.
+./images/.
+./images/.
+.vscode/
