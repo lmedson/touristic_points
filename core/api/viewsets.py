@@ -1,4 +1,5 @@
 from rest_framework.decorators import action
+from rest_framework.filters import SearchFilter
 from rest_framework.response import Response
 from rest_framework.viewsets import ModelViewSet
 from core.models import TouristAttraction
@@ -7,6 +8,10 @@ from .serializers import TouristAttractionSerializer
 
 class TouristAttractionViewSet(ModelViewSet):
     serializer_class = TouristAttractionSerializer
+    filter_backends = (SearchFilter,)
+    search_fields = ('name', 'description',
+                     'adresses__line_adress1', 'adresses__city')
+    lookup_field = 'name'  # this need to be a unique field
 
     def get_queryset(self):
         id = self.request.query_params.get('id', None)
